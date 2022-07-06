@@ -908,10 +908,11 @@ $(document).ready(function() {
 
 		var host = $(this).attr('rel');
 
-        // api:             blockcypher     blockchair      chain.so
-        // network name     "btc"           "bitcoin"       "BTC"
-        // network name     "ltc"           "litecoin"      "LTC"
-        // network name     "doge"          "dogecoin"      "DOGE"
+        // api:             blockcypher     blockchair      chain.so      visionpool.xyz
+        // network name     "btc"           "bitcoin"       "BTC"         ""
+        // network name     "ltc"           "litecoin"      "LTC"         ""
+        // network name     "doge"          "dogecoin"      "DOGE"        ""
+	// network name     ""              ""              ""            ""(vision
 
 		if(host=='chain.so_bitcoinmainnet'){
 			listUnspentChainso(redeem, "BTC");
@@ -1863,9 +1864,9 @@ $(document).ready(function() {
 			configureBroadcast();
 			configureGetUnspentTx();
 
-            if (coinjs.pub == 0x30){   // LTC
-                explorer_addr = "https://chain.so/address/LTC/";
-                coinjs.bech32.hrp = "ltc";
+            if (coinjs.pub == 0x46){   // VIS(previous: LTC)
+                explorer_addr = "https://explorer.visionpool.xyz/address/";
+                coinjs.bech32.hrp = "vis";
             }
             else if (coinjs.pub == 0x1e){   // DOGE
                 explorer_addr = "https://chain.so/address/DOGE/";
